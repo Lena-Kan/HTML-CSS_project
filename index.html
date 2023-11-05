@@ -11,13 +11,14 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Oswald:wght@200;300;400;500&family=PT+Sans+Narrow&family=Roboto+Condensed:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <link rel="stylesheet" href="./sass/style.css">
     <title>Pet-project</title>
   </head>
   <body>
     <div id="root">
       <section>
-        <div class="great-ideas">
+        <div class="great-ideas" style="background-image: url(./image/Bitmap.svg);">
           <nav class="great-ideas__menu">
             <a href="#">WORKS</a>
             <a href="#">ABOUT</a>
@@ -25,13 +26,13 @@
             <a href="#">BLOG</a>
             <a href="#">CONTACT</a>
           </nav>
-          <div class="great-ideas_table">
+          <div class="great-ideas__table">
             <h2>WHERE GREAT IDEAS COME TO LIFE</h2>
             <p>
               Passionate creative studio helping startups grow their business!
             </p>
           </div>
-          <div class="great-ideas_number">
+          <div class="great-ideas__number">
             <div>
               01
               <div class="line_1 green_line"></div>
@@ -46,7 +47,7 @@
 
       <section>
         <div class="weAre">
-          <div class="weAre_article">
+          <div class="weAre__article">
             <h4>WE ARE</h4>
             <h2>THE SQWD</h2>
             <p>
@@ -57,13 +58,13 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
               numquam sequi culpa sapiente nam earum esse eaque magnam atque.
             </p>
-            <div class="weAre_image">
+            <div class="weAre__article__image">
               <img src="./image/man.svg" alt="image" />
             </div>
-            <div class="weAre_image">
+            <div class="weAre__article__image">
               <img src="./image/GreenBox.svg" alt="image_box" />
             </div>
-            <div class="weAre_image">
+            <div class="weAre__article__image">
               <img src="./image/sport_man.svg" alt="image" />
             </div>
           </div>
@@ -72,11 +73,11 @@
 
       <section>
         <div class="our-services">
-          <div class="our-services_title">
+          <div class="our-services__title">
             <h3>Our Services</h3>
           </div>
-          <div class="our-services_target">
-            <div class="our-services_target__card">
+          <div class="our-services__target">
+            <div class="our-services__target__card">
               <div>
                 <p>BRANDING</p>
                 <p><img src="./image/Oval.svg" alt="" /></p>
@@ -90,7 +91,7 @@
               </p>
               <button>READ MORE</button>
             </div>
-            <div class="our-services_target__card border-bottom_line">
+            <div class="our-services__target__card border-bottom_line">
               <div>
                 <p>DESIGN</p>
                 <p>
@@ -106,7 +107,7 @@
               </p>
               <button>READ MORE</button>
             </div>
-            <div class="our-services_target__card">
+            <div class="our-services__target__card">
               <div>
                 <p>DEVELOPMENT</p>
                 <p><img src="./image/Oval.svg" alt="" /></p>
@@ -125,10 +126,10 @@
       </section>
 
       <section>
-        <div class="latest-works_grid">
+        <div class="latest-works">
           <div class="latest-works__title">
             <h3>Latest Works</h3>
-            <nav class="latest-works_grid__menu">
+            <nav class="latest-works__title__menu">
               <a href="">ALL</a>
               <a href="">WEB DESIGN</a>
               <a href="">BRANDING</a>
@@ -209,7 +210,7 @@
             </div>
           </div>
           <div class="latest-works__view-more">
-            <div class="latest-works__button">
+            <div class="latest-works__view-more__button">
               <button>view more</button>
             </div>
           </div>
@@ -218,16 +219,16 @@
 
       <section>
         <div class="team">
-          <div class="team-wraper">
-            <div class="team__title">
+          <div class="team__wraper">
+            <div class="team__wraper__title">
               <h3>The Team</h3>
             </div>
-            <div class="team__photos">
-              <div class="team-member">
-                <div class="team-member__photo">
+            <div class="team__wraper__photos">
+              <div class="team__wraper__photos__team-member">
+                <div class="team__wraper__photos__team-member__photo">
                   <img src="./image/Tom Jones.png" alt="photo" />
                 </div>
-                <div class="team-member__name">
+                <div class="team__wraper__photos__team-member__name">
                   <p
                     class="team-member__name-font latest-works__name-title_font"
                   >
@@ -235,11 +236,11 @@
                   </p>
                 </div>
               </div>
-              <div class="team-member">
-                <div class="team-member__photo">
+              <div class="team__wraper__photos__team-member">
+                <div class="team__wraper__photos__team-member__photo">
                   <img src="./image/MICHAEL FRAUP.png" alt="photo" />
                 </div>
-                <div class="team-member__name">
+                <div class="team__wraper__photos__team-member__name">
                   <p
                     class="team-member__name-font latest-works__name-title_font"
                   >
@@ -253,11 +254,11 @@
                   <p>Create with simplicity in mind!</p>
                 </div>
               </div>
-              <div class="team-member">
-                <div class="team-member__photo">
+              <div class="team__wraper__photos__team-member">
+                <div class="team__wraper__photos__team-member__photo">
                   <img src="./image/TIM CAHILL.png" alt="photo" />
                 </div>
-                <div class="team-member__name">
+                <div class="team__wraper__photos__team-member__name">
                   <p
                     class="team-member__name-font latest-works__name-title_font"
                   >
@@ -281,7 +282,7 @@
               aliquip ex ea commodo consequat.
             </p>
           </div>
-          <div class="author-design_icon">
+          <div class="author-design__icon">
             <img src="./image/99.png" alt="image 99" />
           </div>
           <div class="author-design__name">
@@ -300,22 +301,22 @@
       </section>
       <footer>
         <div class="footer-wrap">
-          <div class="talk-to-us">
-            <div class="plan">
+          <div class="footer-wrap__talk-to-us">
+            <div class="footer-wrap__talk-to-us__plan">
               <img src="./image/bag.png" alt="bag icon" />
               <p class="font_color1">Want to work together?</p>
               <p class="font_color1">Amazing. Tell us about your project!</p>
             </div>
-            <div class="support">
+            <div class="footer-wrap__talk-to-us__support">
               <img src="./image/mail.png" alt="mail icon" />
               <p class="font_color2">Contact us</p>
               <p class="font_color2">Get in touch</p>
             </div>
           </div>
-          <div class="contact">
+          <div class="footer-wrap__contact">
             <p>3rd Floor, Santa Monica Beach, CA, San Francisco</p>
             <p>(359) 0 123 456 789 - info@yourmail.com</p>
-            <div class="contact__image">
+            <div class="footer-wrap__contact__image">
               <img
                 src="./image/facebook-logo-in-circular-button-outlined-social-symbol.png"
                 alt="icon facebook"
@@ -327,7 +328,7 @@
               <img src="./image/pinterest-logo.png" alt="icon pinterest" />
             </div>
           </div>
-          <div class="copyright">
+          <div class="footer-wrap__copyright">
             <p>
               Copyright 2016 - All Rights Reserved - Designed by JD
             </p>

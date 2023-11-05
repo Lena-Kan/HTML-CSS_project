@@ -1,0 +1,534 @@
+%font-family
+    font-style: normal
+    line-height: normal
+
+%border-bottom-style
+    border-bottom: 2.5px solid #4caf50
+
+@mixin fontSettings($nameFamily, $fs, $fw, $ls)
+    font-family: $nameFamily
+    font-size: $fs
+    font-weight: $fw
+    letter-spacing: $ls
+
+@mixin position($top, $left)
+    position: absolute
+    top: $top
+    left: $left
+
+@mixin screen-size($width, $height)
+    width: $width
+    height: $height
+
+@mixin display-setting($js, $ai)
+    display: flex
+    justify-content: $js
+    align-items: $ai
+
+
+html,
+body
+    margin: 0
+    padding: 0
+    border: 0
+.root
+    width: 100%
+.great-ideas
+    @include screen-size(100%, 100vh)
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    background-color: rgba(63, 62, 62, 0.5)
+    background-blend-mode: multiply
+    display: flex
+    flex-direction: column
+
+    &__menu
+        @include screen-size(100%, 100px)
+        @include display-setting(right, center)
+        flex: 1
+        padding-right: 100px
+        box-sizing: border-box
+        gap: 40px
+        a
+            color: #fff
+            @include fontSettings("PT Sans Narrow", 14px, 400, 1px)
+            @extend %font-family
+            text-decoration: none
+            &:first-child
+                @extend %border-bottom-style
+                padding-left: 5px
+            &:nth-child(n + 2)::after
+                content: ""
+                @extend %border-bottom-style
+                width: 12px
+                display: block
+                margin: 0 0 0 auto
+    &__table
+        text-align: center
+        flex: 3
+        h2
+            @include fontSettings("Oswald", 72px, 500, 4.6px)
+            @extend %font-family
+            color: #fff
+            text-align: center
+            padding-top: 40px
+            margin-bottom: 20px
+        p
+            @include fontSettings("OpenSans", 20px, 400, 2.5px)
+            @extend %font-family
+            color: #fff
+            text-align: center
+    &__number
+        @include display-setting(center, end)
+        flex: 1
+        gap: 10px
+        margin-bottom: 20pxF
+        div:first-child
+            @include fontSettings("Oswald", 36px, 700, 2.3px)
+            @extend %font-family
+            color: #fff
+            position: relative
+        > div .green_line
+            @extend %border-bottom-style
+            position: absolute
+            top: 50%
+        .line_1
+            left: -5px
+            width: 17px
+
+        .line_2
+            left: 18px
+            width: 8px
+
+        .line_3
+            left: 33px
+            width: 5px
+        > div:nth-child(n + 2)
+            @include fontSettings("Oswald", 18px, 700, 1.1px)
+            @extend %font-family
+            color: rgba(255, 255, 255, 0.44)
+            padding-bottom: 4px
+.weAre
+    @include screen-size(100%, 100vh)
+    @include display-setting(center, center)
+    padding-bottom: 10px
+    &__article
+        @include screen-size(90%, 80vh)
+        position: relative
+        h4
+            @include fontSettings("Oswald", 36px, 700, 2.3px)
+            @extend %font-family
+            color: #333
+            padding-top: 73px
+            margin: 0
+            position: relative
+            z-index: 10
+        h2
+            @include fontSettings("OpenSans", 42px, 300, 2.6px)
+            @extend %font-family
+            color: #504e4e
+            position: relative
+            z-index: 10
+        p
+            @include fontSettings("OpenSans", 15px, 300, 1.2px)
+            @include screen-size(281px, 75px)
+            @extend %font-family
+            color: #5b5858
+            line-height: 25px
+            position: relative
+            z-index: 10
+        p:first-of-type
+            padding-left: 51px
+        p::before
+            content: ""
+            @include position(19%, -25px)
+            display: block
+            position: relative
+            width: 20px
+            border-bottom: 2px solid black
+        p:last-of-type
+            margin-left: auto
+        div:nth-of-type(1)
+            @include position(0%, 18%)
+            background-color: #f4f4f4
+            line-height: 0
+            z-index: 3
+        div:nth-of-type(2)
+            @include position(10%, 35%)
+            opacity: 0.8
+            z-index: 2
+        div:nth-of-type(3)
+            @include position(20%, 54%)
+            opacity: 0.5
+            z-index: 0
+        &__image
+            @include screen-size(300px, 390px)
+            overflow: hidden
+.our-services
+    @include screen-size(100%, 100vh)
+    background-color: #fbfbfb
+    padding: 40px 0
+    box-sizing: border-box
+    &__title
+        @include screen-size(90%, 40%)
+        margin: auto
+        h3
+            @include fontSettings("Oswald", 48px, 700, 3px)
+            @extend %font-family
+            color: #252525
+            padding-top: 100px
+            margin: 0
+        h3::after
+            content: ""
+            width: 45px
+            border-bottom: 2.5px solid #252525
+            display: block
+    &__target
+        @include display-setting(center, center)
+        width: 90%
+        margin: auto
+        gap: 20px
+        .border-bottom_line
+                @extend %border-bottom-style
+                background-color: #fff
+                padding: 25px
+        &__card
+            
+            > div
+                @include display-setting(space-between, center)
+                text-align: center
+                position: relative
+            > div p:first-child
+                @include fontSettings("Oswald", 20px, 100, 2px)
+                @extend %font-family
+                margin: auto 0
+            > div p:first-child::after
+                content: ""
+                @extend %border-bottom-style
+                width: 35px
+                display: block
+            > div p:nth-of-type(n + 2)
+                @include screen-size(90px, 94px)
+            > div p:last-child
+                position: absolute
+                top: 0
+                right: 0
+                text-align: center
+            > div p:last-child img
+                @include screen-size(25px, 25px)
+                padding: 35%
+            > p
+                @include fontSettings("OpenSans", 12px, 400, 1px)
+                @extend %font-family
+                color: #777
+                line-height: 25px
+
+            > button
+                color: #252525
+                @include fontSettings("Oswald", 10px, 300, 0.6px)
+                @extend %font-family
+                border: none
+                background-color: #fff
+                cursor: pointer
+.latest-works
+    @include screen-size(90%, 1652px)
+    margin: 60px auto
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(9, 183px)
+    grid-column-gap: 10px
+    &__title
+        grid-row: 1/3
+        grid-column: 1/1
+        h3
+            @include fontSettings("Oswald", 48px, 700, 3px)
+            @extend %font-family
+            color: #252525
+        h3::after
+            content: ""
+            width: 45px
+            border-bottom: 2.5px solid #252525
+            display: block
+        &__menu a
+            @include fontSettings("OpenSans", 13px, 300, 0.8px)
+            @extend %font-family
+            margin-right: 20px
+            color: #252525
+            text-decoration: none
+            &:first-child
+                font-weight: 600
+            &:nth-child(n + 2)
+                font-weight: 400
+    &__camera
+        grid-row: span 3
+        grid-column: 2/2
+        text-align: end
+        position: relative
+        .latest-works__name-font
+            @include fontSettings("OpenSans", 18px, 300, 1.1px)
+            @extend %font-family
+            color: #252525
+            padding-right: 80px
+        .latest-works__description-font
+            @include fontSettings("OpenSans", 13px, 300, 0.8px)
+            @extend %font-family
+            color: #c2c2c2
+            line-height: 23px
+            padding-right: 80px
+        .latest-works__right_name-title
+            position: absolute
+            text-align: start
+            top: 45%
+            >p
+                @include fontSettings("Oswald", 40px, 300, 3px)
+                @extend %font-family
+                color: #252525
+    &__cat
+        grid-row: span 3
+        grid-column: 1/1
+        position: relative
+        .latest-works__left_name-title
+            position: absolute
+            right: 0%
+            top: 44%
+            .latest-works__name-title_font
+                @include fontSettings("Oswald", 40px, 300, 3px)
+                @extend %font-family
+                color: #252525
+            .crossed-text::after
+                content: ""
+                @extend %border-bottom-style
+                bottom: 28px
+                width: 80px
+                position: relative
+                display: block
+            .crossed-text::before
+                content: ""
+                @extend %border-bottom-style
+                top: 38px
+                position: relative
+                display: block
+        &_image .latest-works__name-font
+            @include fontSettings("OpenSans", 18px, 300, 1.1px)
+            @extend %font-family
+            color: #252525
+            padding-right: 80px
+        &_image .position-image_left
+            margin-left: 200px
+        &_image .latest-works__description-font
+            @include fontSettings("OpenSans", 13px, 300, 0.8px)
+            @extend %font-family
+            color: #c2c2c2
+            line-height: 23px
+            padding-right: 80px
+        &_image > button,
+        .latest-works__button button
+            border: none
+            background-color: #fff
+            font-size: 13px
+            color: #252525
+            font-style: normal
+            letter-spacing: 0.8px
+            cursor: pointer
+        &_image > button::after
+            content: ""
+            @extend %border-bottom-style
+            bottom: 12px
+            width: 120px
+            position: relative
+            display: block
+    &__mac
+        grid-row: 5/8
+        grid-column: 2/2
+        text-align: end
+        position: relative
+        .latest-works__name-font
+            @include fontSettings("OpenSans", 18px, 300, 1.1px)
+            @extend %font-family
+            color: #252525
+            padding-right: 80px
+        .latest-works__description-font
+            @include fontSettings("OpenSans", 13px, 300, 0.8px)
+            @extend %font-family
+            color: #c2c2c2
+            line-height: 23px
+            padding-right: 80px
+        .latest-works__right_name-title
+            position: absolute
+            text-align: start
+            top: 45%
+        .latest-works__name-title_font
+            @include fontSettings("Oswald", 40px, 300, 3px)
+            @extend %font-family
+            color: #252525
+    &__apple
+        grid-row: 7/10
+        grid-column: 1/1
+        position: relative
+        .latest-works__name-font
+            @include fontSettings("OpenSans", 18px, 300, 1.1px)
+            @extend %font-family
+            color: #252525
+            padding-right: 80px
+        .position-image_left
+            margin-left: 200px
+        .latest-works__description-font
+            @include fontSettings("OpenSans", 13px, 300, 0.8px)
+            @extend %font-family
+            color: #c2c2c2
+            line-height: 23px
+            padding-right: 80px
+        .latest-works__left_name-title
+            position: absolute
+            right: 0%
+            top: 44%
+            .latest-works__name-title_font
+                @include fontSettings("Oswald", 40px, 300, 3px)
+                @extend %font-family
+                color: #252525
+    &__view-more
+        @include display-setting(end, end)
+        grid-row: 9/10
+        grid-column: 2/2
+        &__button button
+            font-family: "Oswald"
+            letter-spacing: 2px
+            border: none
+            border-radius: 5px
+            cursor: pointer
+.team
+    @include screen-size(100%, 100vh)
+    margin: 60px
+    &__wraper
+        width: 90%
+        margin: auto
+        h3
+            @include fontSettings("Oswald", 48px, 700, 3px)
+            @extend %font-family
+            color: #252525
+        h3::after
+            content: ""
+            width: 45px
+            border-bottom: 2.5px solid #252525
+            display: block
+        &__photos
+            @include display-setting(baseline, center)
+            gap: 20px
+            &__team-member
+                position: relative
+                &__name
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    width: 100%
+                    text-align: center
+                    opacity: 0.5
+                    background: #fff
+                    .team-member__name-font
+                        font-size: 18px
+                        letter-spacing: 1.152px
+                    p:nth-of-type(2)::before
+                        content: ""
+                        position: relative
+                        bottom: 10px
+                        width: 45px
+                        border-bottom: 2.5px solid #252525
+                        display: block
+                        margin: auto
+                    p:nth-of-type(3)
+                        @include fontSettings("OpenSans", 12px, 400, 1px)
+                        @extend %font-family
+                        color: #777
+                        text-align: center
+                        line-height: 25px
+.author-design
+    width: 90%
+    margin: 60px auto
+    text-align: center
+    &__description
+        p
+            @include fontSettings("OpenSans", 14px, 300, 0.8px)
+            @extend %font-family
+            color: #373737
+            line-height: 31px
+            margin-bottom: 30px
+    .author-design__name
+        .latest-works__name-title_font
+            @include fontSettings("Oswald", 40px, 300, 3px)
+            @extend %font-family
+            color: #252525
+            margin: 10px 10px 40px 10px
+            span:first-child
+                color: #373737
+                font-size: 18px
+                letter-spacing: 1.1px
+            span:nth-child(2)
+                font-size: 18px
+                letter-spacing: 1.1px
+            span:last-child
+                color: #b8b8b8
+                font-size: 14px
+                letter-spacing: 0.8px
+    .author-design__star
+        @include display-setting(center, center)
+        height: 15px
+        gap: 10px
+.footer-wrap
+    @include display-setting(center, center)
+    flex-direction: column
+    width: 100%
+    &__talk-to-us
+        @include screen-size(90%, 280px)
+        display: flex
+        margin: auto
+        &__plan,
+        &__support
+            @include screen-size(100%, 100%)
+            @include display-setting(center, center)
+            flex-direction: column
+        &__support
+            background: #70bd59
+            .font_color2
+                color: #fff
+        &__plan
+            background: #fbfbfb
+            .font_color1
+                color: #373737
+        p:nth-of-type(1)
+            @include fontSettings("Oswald", 24px, 400, 2.6px)
+            @extend %font-family
+        p:nth-of-type(2)
+            @include fontSettings("OpenSans", 14px, 300, 1.5px)
+            @extend %font-family
+    &__contact
+        @include screen-size(90%, 300px)
+        @include display-setting(center, center)
+        flex-direction: column
+        background: #2e2e2e
+        margin: auto
+        padding-top: 20px
+        p
+            @include fontSettings("Oswald", 13px, 300, 0.8px)
+            @extend %font-family
+            margin-top: 0
+            color: #fff
+            opacity: 0.5
+        &__image
+            display: flex
+            margin-top: 20px
+            gap: 20px
+            img
+                cursor: pointer
+    &__copyright
+        @include screen-size(90%, 58px)
+        @include display-setting(center, center)
+        margin: auto
+        background: #252525
+    &__copyright
+        p
+            @include fontSettings("Oswald", 13px, 300, 0.8px)
+            @extend %font-family
+            margin-top: 0
+            color: #fff
+            opacity: 0.5
