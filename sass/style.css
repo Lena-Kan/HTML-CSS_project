@@ -534,7 +534,7 @@ body {
 .team {
   width: 100%;
   height: 100vh;
-  margin: 60px;
+  margin: 0 auto;
 }
 .team__wraper {
   width: 90%;
@@ -557,10 +557,12 @@ body {
   display: flex;
   justify-content: baseline;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
 }
 .team__wraper__photos__team-member {
   position: relative;
+  width: 31%;
+  overflow: hidden;
 }
 .team__wraper__photos__team-member__name {
   position: absolute;
